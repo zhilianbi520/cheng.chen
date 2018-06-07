@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import HelloWorld from '@/components/HelloWorld';
+import headbg from '@/components/headbg';
+import ResumeMain from '@/components/ResumeMain';
 
 Vue.use(Router);
 
@@ -8,8 +9,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld,
+      name: 'headbg',
+      component: headbg,
+    },
+    {
+      path: '/main',
+      name: 'main',
+      component: ResumeMain,
     },
   ],
 });

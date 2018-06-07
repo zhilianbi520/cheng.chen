@@ -1,22 +1,24 @@
 'use strict'
 const path = require('path')
 const utils = require('./utils')
+const webpack = require("webpack")
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
+
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
 const createLintingRule = () => ({
-  test: /\.(js|vue)$/,
-  loader: 'eslint-loader',
-  enforce: 'pre',
-  include: [resolve('src'), resolve('test')],
-  options: {
-    formatter: require('eslint-friendly-formatter'),
-    emitWarning: !config.dev.showEslintErrorsInOverlay
-  }
+  // test: /\.(js|vue)$/,
+  // loader: 'eslint-loader',
+  // enforce: 'pre',
+  // include: [resolve('src'), resolve('test')],
+  // options: {
+  //   formatter: require('eslint-friendly-formatter'),
+  //   emitWarning: !config.dev.showEslintErrorsInOverlay
+  // }
 })
 
 module.exports = {
@@ -36,7 +38,11 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
+      'assets':path.resolve(__dirname,'./src/assets'),
     }
+  },
+  externals:{
+
   },
   module: {
     rules: [
@@ -77,6 +83,12 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    new webpack.ProvidePlugin({
+      jQuery: "jquery",
+      $: "jquery"
+    })
+  ],
   node: {
     // prevent webpack from injecting useless setImmediate polyfill because Vue
     // source contains it (although only uses it if it's native).
