@@ -1,13 +1,11 @@
 <template>
   <div class="main">
-    <swiper class="mainbody" :options="swiperOption" ref="mySwiper">
+    <swiper id="mainbody" :options="swiperOption" ref="mySwiper">
       <!-- slides -->
       <swiper-slide class="fisrtmain">
         <h2>{{ ResumeHeader }}</h2>
         <div class="BasicInfo">
-          <div class="portrait">
-            <img src="../assets/portrait.png" alt="我的头像">
-          </div>
+          <div class="portrait"></div>
           <table cellpadding="0" cellspacing="0">
             <tr>
             <td class="Name">程晨</td>
@@ -19,7 +17,7 @@
             </tr>
             <tr>
               <td class="MyPhoneTitle">电话：</td>
-              <td class="MyPhone"><a href="15718863925">15718863925</a></td>
+              <td class="MyPhone"><a href="tel:15718863925">15718863925</a></td>
             </tr>
             <tr>
               <td>邮箱：</td>
@@ -41,19 +39,21 @@
               <td>目前状态   在职</td>
             </tr>
           </table>
-          <h4>专业技能</h4>
-          <ul>
-            <li>1.熟练HTML5/CSS3网页构建，对HTML语义化和CSS3新增特性有深刻的理解以及熟练的运用。</li>
-            <li>2.熟悉响应式布局和弹性盒布局，能够熟练完成基于HTML5的webApp开发&&hybirdApp的开发，善于处理移动端各类设备适配问题。</li>
-          </ul>
         </div>
       </swiper-slide>
       <swiper-slide>
+        <h4>专业技能</h4>
         <ul>
+          <li>1.熟练HTML5/CSS3网页构建，对HTML语义化和CSS3新增特性有深刻的理解以及熟练的运用。</li>
+          <li>2.熟悉响应式布局和弹性盒布局，能够熟练完成基于HTML5的webApp开发&&hybirdApp的开发，善于处理移动端各类设备适配问题。</li>
           <li>3.熟练掌握JavaScript语言核心技术DOM、BOM、JSON等，对面向对象的编程思想有一定的认识与理解，对ES6&ES7新特性有一定了解。</li>
           <li>4.熟练使用JQuery等优秀的JavaScript库以及JQuery插件。</li>
           <li>5.熟练运用Vue全家桶构建SPA项目并部署至nginx，有Vue构建的SPA的线上项目,对React等其他前端MVVM框架有一定的认知与了解。</li>
           <li>6.熟练使用ajax进行http异步请求，利用promise的http库axios.js，进行异步请求，渲染数据至页面。有实现请求拦截的相关实际开发经验。</li>
+        </ul>
+      </swiper-slide>
+      <swiper-slide>
+        <ul>
           <li>7.对mint-ui、bootstrap、weui等UI框架有相关开发经验，能够熟练使用SASS等CSS预处理器进行样式布局。</li>
           <li>8.了解AMD、CMD、CommonJS前端模块化规范。</li>
           <li>9.能够熟练使用Webpack前端模块化工具。</li>
@@ -62,16 +62,15 @@
           <li>12.有基于weex实现跨平台移动开发的项目经历。</li>
           <li>13.熟练使用git&&svn版本控制代码管理工具。</li>
           <li>14. 能够熟练使用Webstorm、Sublime text编译器、IntelliJ IDEA等IDE，利用Eslint检查语法规范以及代码风格。</li>
-        </ul>
-      </swiper-slide>
-      <swiper-slide>
-        <ul>
           <li>15. 熟练运用markdown语法编写文档，利用思维导等工具梳理业务逻辑。</li>
           <li>16. 能够熟练使用PhotoShop、Sketch等图像处理软件完成切图工作，并制作成雪碧图。</li>
         </ul>
+      </swiper-slide>
+      <swiper-slide>
         <h4>工作经验</h4>
         <div class="WorkSuffer">
-          <p>2016/04--至今<br/>前端开发技术经理<br/>北京药渡经纬信息科技有限公司</p>
+          <p>2018/07--至今<br/>前端开发经理<br/>瑞尔集团</p>
+          <p>2016/04--2018/07<br/>前端开发技术经理<br/>北京药渡经纬信息科技有限公司</p>
           <p>2015/07--2016/03<br/>前端开发工程师<br/>杭州蚯蚓网络科技有限公司</p>
           <ul>
             <li>1. 负责将UI设计稿形成符合W3C/HTML5等规范的前端代码。</li>
@@ -84,7 +83,6 @@
         </div>
       </swiper-slide>
       <swiper-slide>
-        <h4>项目经历</h4>
         <div class="ProjectBody">
           <table cellpadding="0" cellspacing="0">
             <th colspan="2">药渡数据国际版<font>(正在开发中)</font></th>
@@ -151,7 +149,7 @@
             </tr>
           </table>
           <table cellpadding="0" cellspacing="0">
-            <th colspan="2">药渡学院<font>(正在重构中)</font></th>
+            <th colspan="2">药渡学院<font></font></th>
             <tr>
               <td>项目地址</td>
               <td>药渡app</td>
@@ -193,21 +191,6 @@
             <tr>
               <td>项目职责</td>
               <td>负责发现模块编写，页面功能实现。</td>
-            </tr>
-          </table>
-          <table cellpadding="0" cellspacing="0">
-            <th colspan="2">想去移动端<font>(已上线)</font></th>
-            <tr>
-              <td>项目地址</td>
-              <td>想去App</td>
-            </tr>
-            <tr>
-              <td>项目描述</td>
-              <td>是一款购物社区类型的App,为独立设计师提供作品展示平台，为购物者提供前沿的设计理念与产品。</td>
-            </tr>
-            <tr>
-              <td>项目职责</td>
-              <td>此项目为团队项目，本人负责部分页面布局，以及与和后台登录注册，搜索这三个模块数据交互。</td>
             </tr>
           </table>
         </div>
@@ -309,7 +292,7 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-  .main,.mainbody{
+  .main,#mainbody{
     width: 100vw;
     height: 100vh;
   }
@@ -333,7 +316,7 @@ export default {
   }
   .swiper-slide .WorkSuffer p{
     font-size: 30px;
-    line-height: 45px;
+    line-height: 40px;
   }
   .swiper-slide a{
     color: #3471ff;
@@ -380,11 +363,11 @@ export default {
     font-weight: 900;
   }
   .portrait{
-    margin-bottom: 20px;
-  }
-  .portrait img{
-    width:200px;
+    width: 100%;
     height: 200px;
+    background: url("../assets/portrait.png") no-repeat center;
+    background-size:200px 200px;
+    margin-bottom: 20px;
   }
   #swiper-pagination .swiper-pagination-bullet{
     width:25px;

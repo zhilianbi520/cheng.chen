@@ -15,6 +15,7 @@ Vue.config.productionTip = false;
 // add transition
 Vue.use(vueg, router, {
   forwardAnim: 'slideInRight',
+  duration: '0.6',
 });
 // add swiper
 Vue.use(VueSwiper);
